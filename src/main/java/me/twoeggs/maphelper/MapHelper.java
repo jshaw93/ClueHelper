@@ -56,7 +56,7 @@ public class MapHelper {
             for(ITextComponent i : lst) {
                 String lg = i.toString();
                 if(lg.contains("Clue Scroll ID: \"")) {
-                    for(int j = 1; j < 37; j++) {
+                    for(int j = 1; j <= 37; j++) {
                         if(!lg.contains("\"" + j + "\"")) {
                             continue;
                         }
