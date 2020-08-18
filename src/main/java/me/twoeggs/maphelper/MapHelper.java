@@ -140,79 +140,79 @@ public class MapHelper {
                 break;
             case "19":
                 display = "compass set 264 63 -695";
-                display2 = "YSITARLIK; Krystilia";
+                display2 = "YSITARLIK; Krystilia in Edgeville";
                 break;
             case "20":
                 display = "/compass set -132 68 -174";
-                display2 = "UESRIQ; Squire";
+                display2 = "UESRIQ; Squire in Falador";
                 break;
             case "21":
                 display = "/compass set 202 62 70";
-                display2 = "GEGIA; Aggie";
+                display2 = "GEGIA; Aggie in Draynor";
                 break;
             case "22":
                 display = "/compass set 237 63 78";
-                display2 = "NED; Ned";
+                display2 = "NED; Ned in Draynor";
                 break;
             case "23":
                 display = "/compass set 296 65 65";
-                display2 = "LEEAL; Leela";
+                display2 = "LEEAL; Leela near Draynor Jail";
                 break;
             case "24":
                 display = "/compass set 321 63 133";
-                display2 = "ELLKAIDY; Lady Keli";
+                display2 = "ELLKAIDY; Lady Keli in Draynor Jail";
                 break;
             case "25":
                 display = "/compass set 309 63 133";
-                display2 = "OEJ; Joe";
+                display2 = "OEJ; Joe in Draynor Jail";
                 break;
             case "26":
                 display = "/compass set 48 66 247";
-                display2 = "LAASIS RMREON; Seaman Lorris";
+                display2 = "LAASIS RMREON; Seaman Lorris in Port Sarim";
                 break;
             case "27":
                 display = "/compass set 708 63 -358";
-                display2 = "RBUAUY; Aubury";
+                display2 = "RBUAUY; Aubury in Varrock";
                 break;
             case "28":
                 display = "/compass set -204 65 415";
-                display2 = "OSMCFSEFROTIUC; Customs Officer";
+                display2 = "OSMCFSEFROTIUC; Customs Officer on Karamja";
                 break;
             case "29":
                 display = "/compass set -162 63 239";
-                display2 = "ETTYH; Hetty";
+                display2 = "ETTYH; Hetty in Rimmington";
                 break;
             case "30":
                 display = "/compass set -112 79 -174";
-                display2 = "YNIRVVISV; Sir Vyvin";
+                display2 = "YNIRVVISV; Sir Vyvin in Falador";
                 break;
             case "31":
                 display = "/compass set -87 65 408";
-                display2 = "GRTUHO; Thurgo";
+                display2 = "GRTUHO; Thurgo near Port Sarim";
                 break;
             case "32":
                 display = "/compass set -207 61 -508";
-                display2 = "IDOCR; Doric";
+                display2 = "IDOCR; Doric north of Falador";
                 break;
             case "33":
                 display = "/compass set 569 62 -639";
-                display2 = "DORLE; Reldo";
+                display2 = "DORLE; Reldo in Varrock Castle";
                 break;
             case "34":
                 display = "/compass set 576 71 185";
-                display2 = "OHRUKA ECDOI; Duke Horacio";
+                display2 = "OHRUKA ECDOI; Duke Horacio in Lumbridge Castle";
                 break;
             case "35":
                 display = "/compass set 284 49 376";
-                display2 = "RDRRIS ODIWZAE; Wizard Sedridor";
+                display2 = "RDRRIS ODIWZAE; Wizard Sedridor in Wizards Tower basement";
                 break;
             case "36":
                 display = "/compass set 687 64 228";
-                display2 = "TAFEERCKARNE; Father Aereck";
+                display2 = "TAFEERCKARNE; Father Aereck in Lumbridge church";
                 break;
             case "37":
                 display = "/compass set 751 66 292";
-                display2 = "RAMIK; Karim";
+                display2 = "RAMIK; Karim in Al Kharid";
                 break;
             default:
                 display = "";
