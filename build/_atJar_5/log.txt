@@ -1,0 +1,5 @@
+Args: "--inJar", "C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-injected.jar", "--outJar", "C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0_mapped_snapshot_20200816-1.15.1\forge-1.15.2-31.2.0_mapped_snapshot_20200816-1.15.1.jar", "--logFile", "accesstransform.log", "--atFile", "C:\Users\CPU_76\IdeaProjects\MapHelper\build\_atJar_5\parent_at.cfg"
+Classpath: C:\Users\CPU_76\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\1.0.5\accesstransformers-1.0.5-fatjar.jar
+WorkDir: C:\Users\CPU_76\IdeaProjects\MapHelper\build\_atJar_5
+Main: net.minecraftforge.accesstransformer.TransformerProcessor
+====================================
