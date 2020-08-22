@@ -235,9 +235,10 @@ public class MapHelper {
         MainWindow res = e.getWindow();
         FontRenderer renderer = mc.fontRenderer;
         int width = res.getScaledWidth()-10-renderer.getStringWidth(x);
+        int width2 = res.getScaledWidth()-10-renderer.getStringWidth(egg2);
         int height = res.getScaledHeight()/2+50;
         int height2 = height+10;
         renderer.drawString(x, width, height, 0xFFFFFFFF);
-        renderer.drawString(egg2, width, height2, 0xFFFFFFFF);
+        renderer.drawString(egg2, width2, height2, 0xFFFFFFFF);
     }
 }
