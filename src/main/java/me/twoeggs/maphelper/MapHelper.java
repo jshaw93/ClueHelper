@@ -72,11 +72,11 @@ public class MapHelper {
                 break;
             case "2":
                 display = "/compass set 612 65 -410";
-                display2 = "South of Varrock Platebody store / West of Varrock Archery store";
+                display2 = "South of Varrock Platebody store";
                 break;
             case "3":
                 display = "/compass set 548 65 84";
-                display2 = "South-east of Fred the Farmer's house / Right next to the Lumbridge treasure chest";
+                display2 = "South-east of Fred the Farmer's house";
                 break;
             case "4":
                 display = "/compass set 623 65 399";
@@ -84,7 +84,7 @@ public class MapHelper {
                 break;
             case "5":
                 display = "/compass set 459 63 217";
-                display2 = "West of Lumbridge Castle / East of encampment at the edge of the Lumbridge Swamp";
+                display2 = "West of Lumbridge Castle";
                 break;
             case "6":
                 display = "/compass set 430 65 -243";
@@ -116,11 +116,11 @@ public class MapHelper {
                 break;
             case "13":
                 display = "/compass set 660 65 18";
-                display2 = "West of the Lumbridge Cow pen (Eastern) / East of the Lumbridge Chicken coop (Eastern)";
+                display2 = "West of the Lumbridge Cow pen (Eastern)";
                 break;
             case "14":
                 display = "/compass set 676 65 -192";
-                display2 = "South of Varrock, inside the fencing West of the Varrock East Mine";
+                display2 = "South of Varrock, inside the fencing";
                 break;
             case "15":
                 display = "/compass set 338 65 -648";
@@ -128,11 +128,11 @@ public class MapHelper {
                 break;
             case "16":
                 display = "/compass set 357 65 64";
-                display2 = "North-west of the H.A.M. Hideout / South of the two farms";
+                display2 = "North-west of the H.A.M. Hideout";
                 break;
             case "17":
                 display = "/compass set 687 63 -35";
-                display2 = "The northern tip on the inside of the Lumbridge cow pen (Eastern)";
+                display2 = "Lumbridge cow pen (Eastern)";
                 break;
             case "18":
                 display = "/compass set 134 68 -477";
@@ -204,7 +204,7 @@ public class MapHelper {
                 break;
             case "35":
                 display = "/compass set 284 49 376";
-                display2 = "RDRRIS ODIWZAE; Wizard Sedridor in Wizards Tower basement";
+                display2 = "RDRRIS ODIWZAE; Wizard Sedridor in Wizards Tower";
                 break;
             case "36":
                 display = "/compass set 687 64 228";
