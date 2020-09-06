@@ -88,7 +88,7 @@ public class MapHelper {
                 break;
             case "6":
                 display = "/compass set 430 65 -243";
-                display2 = "West of the Champion's Guild / West of the Varrock West Mine";
+                display2 = "West of the Champion's Guild";
                 break;
             case "7":
                 display = "/compass set 4 72 355";
@@ -96,7 +96,7 @@ public class MapHelper {
                 break;
             case "8":
                 display = "/compass set -258 65 395";
-                display2 = "West of Karamja General Store / East of Karamja Volcano";
+                display2 = "West of Karamja General Store";
                 break;
             case "9":
                 display = "/compass set -131 65 179";
@@ -104,11 +104,11 @@ public class MapHelper {
                 break;
             case "10":
                 display = "/compass set 4 65 -18";
-                display2 = "West of the Falador farm / North of Port Sarim";
+                display2 = "West of the Falador farm";
                 break;
             case "11":
                 display = "/compass set 930 67 390";
-                display2 = "North of Sorceress' Garden / South-east of Al Kharid";
+                display2 = "South-east of Al Kharid";
                 break;
             case "12":
                 display = "/compass set 809 65 -46";
@@ -136,7 +136,7 @@ public class MapHelper {
                 break;
             case "18":
                 display = "/compass set 134 68 -477";
-                display2 = "West of Barbarian Village / South-east of the Body Altar";
+                display2 = "West of Barbarian Village";
                 break;
             case "19":
                 display = "compass set 264 63 -695";
