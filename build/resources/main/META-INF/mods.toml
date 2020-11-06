@@ -11,7 +11,7 @@ loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft versio
 # The modid of the mod
 modId="maphelper" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="1.0.4" #mandatory
+version="1.0.6" #mandatory
  # A display name for the mod
 displayName="Clue Helper Minescape.me" #mandatory
 authors="Lore" #optional

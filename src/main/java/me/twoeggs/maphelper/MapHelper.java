@@ -13,6 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -32,6 +33,9 @@ public class MapHelper {
     private String egg;
     private String egg2;
 
+    private boolean used = false;
+    private int ticks = 0;
+
     public MapHelper() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
@@ -41,6 +45,14 @@ public class MapHelper {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void onTick(TickEvent.ClientTickEvent e) {
+        if(ticks > 100 && used) {
+            ticks = 0;
+            used = false;
+            // Run code here
+        }
+        if(used) {
+            ticks++;
+        }
         Minecraft mc = Minecraft.getInstance();
         ClientPlayerEntity player = mc.player;
         if (player == null) return;
@@ -88,7 +100,7 @@ public class MapHelper {
                 break;
             case "6":
                 display = "/compass set 430 65 -243";
-                display2 = "West of the Champion's Guild / West of the Varrock West Mine";
+                display2 = "West of the Champion's Guild";
                 break;
             case "7":
                 display = "/compass set 4 72 355";
@@ -96,7 +108,7 @@ public class MapHelper {
                 break;
             case "8":
                 display = "/compass set -258 65 395";
-                display2 = "West of Karamja General Store / East of Karamja Volcano";
+                display2 = "West of Karamja General Store";
                 break;
             case "9":
                 display = "/compass set -131 65 179";
@@ -104,11 +116,11 @@ public class MapHelper {
                 break;
             case "10":
                 display = "/compass set 4 65 -18";
-                display2 = "West of the Falador farm / North of Port Sarim";
+                display2 = "West of the Falador farm";
                 break;
             case "11":
                 display = "/compass set 930 67 390";
-                display2 = "North of Sorceress' Garden / South-east of Al Kharid";
+                display2 = "South-east of Al Kharid";
                 break;
             case "12":
                 display = "/compass set 809 65 -46";
@@ -136,7 +148,7 @@ public class MapHelper {
                 break;
             case "18":
                 display = "/compass set 134 68 -477";
-                display2 = "West of Barbarian Village / South-east of the Body Altar";
+                display2 = "West of Barbarian Village";
                 break;
             case "19":
                 display = "compass set 264 63 -695";
@@ -240,5 +252,15 @@ public class MapHelper {
         int height2 = height+10;
         renderer.drawString(x, width, height, 0xFFFFFFFF);
         renderer.drawString(egg2, width2, height2, 0xFFFFFFFF);
+    }
+
+    @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
+    public void useItemEvent(PlayerInteractEvent.RightClickItem e) {
+        if(used) return;
+        if(egg.isEmpty()) return;
+        used = true;
+        ClientPlayerEntity player = (ClientPlayerEntity) e.getPlayer();
+        player.sendChatMessage(egg);
     }
 }
