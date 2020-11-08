@@ -45,14 +45,15 @@ public class MapHelper {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void onTick(TickEvent.ClientTickEvent e) {
+        // Tick counter 5 seconds
         if(ticks > 100 && used) {
             ticks = 0;
             used = false;
-            // Run code here
         }
         if(used) {
             ticks++;
         }
+        //
         Minecraft mc = Minecraft.getInstance();
         ClientPlayerEntity player = mc.player;
         if (player == null) return;
