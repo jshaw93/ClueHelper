@@ -158,7 +158,7 @@ public class MapHelper {
                 display2 = "West of Barbarian Village";
                 break;
             case "19":
-                display = "compass set 264 63 -695";
+                display = "/compass set 264 63 -695";
                 display2 = "YSITARLIK; Krystilia in Edgeville";
                 break;
             case "20":
