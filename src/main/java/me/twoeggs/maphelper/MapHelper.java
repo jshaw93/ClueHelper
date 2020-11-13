@@ -18,6 +18,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -45,14 +46,15 @@ public class MapHelper {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void onTick(TickEvent.ClientTickEvent e) {
+        // Tick counter 5 seconds
         if(ticks > 100 && used) {
             ticks = 0;
             used = false;
-            // Run code here
         }
         if(used) {
             ticks++;
         }
+        //
         Minecraft mc = Minecraft.getInstance();
         ClientPlayerEntity player = mc.player;
         if (player == null) return;
@@ -62,8 +64,13 @@ public class MapHelper {
         String display2;
         if(item.hasTag()) {
             CompoundNBT itemNBT = item.getTag();
-            INBT g = itemNBT.get("display");
-            ITextComponent po = g.toFormattedComponent();
+            ITextComponent po;
+            try {
+                INBT g = itemNBT.get("display");
+                po = g.toFormattedComponent();
+            } catch(NullPointerException err) {
+                return;
+            }
             List<ITextComponent> lst = po.getSiblings();
             for(ITextComponent i : lst) {
                 String lg = i.toString();
