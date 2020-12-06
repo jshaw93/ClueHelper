@@ -18,7 +18,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -158,7 +157,7 @@ public class MapHelper {
                 display2 = "West of Barbarian Village";
                 break;
             case "19":
-                display = "compass set 264 63 -695";
+                display = "/compass set 264 63 -695";
                 display2 = "YSITARLIK; Krystilia in Edgeville";
                 break;
             case "20":
