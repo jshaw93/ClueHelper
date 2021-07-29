@@ -1,15 +1,15 @@
-Args: "--clean", "C:\Users\CPU_76\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\joined\1.15.2-20200515.085601\joined-1.15.2-20200515.085601-srg.jar", "--output", "C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatched.jar", "--apply", "C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatches.lzma"
-Classpath: C:\Users\CPU_76\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\binarypatcher\1.0.12\binarypatcher-1.0.12-fatjar.jar
-WorkDir: C:\Users\CPU_76\IdeaProjects\MapHelper\build\_applyBinpatches_2
+Args: "--clean", "C:\Users\Jshaw\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\joined\1.15.2-20200515.085601\joined-1.15.2-20200515.085601-srg.jar", "--output", "C:\Users\Jshaw\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatched.jar", "--apply", "C:\Users\Jshaw\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatches.lzma"
+Classpath: C:\Users\Jshaw\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\binarypatcher\1.0.12\binarypatcher-1.0.12-fatjar.jar
+WorkDir: C:\Users\Jshaw\IdeaProjects\MapHelper\build\_applyBinpatches_2
 Main: net.minecraftforge.binarypatcher.ConsoleTool
 ====================================
 Applying: 
-  Clean:     C:\Users\CPU_76\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\joined\1.15.2-20200515.085601\joined-1.15.2-20200515.085601-srg.jar
-  Output:    C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatched.jar
+  Clean:     C:\Users\Jshaw\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\joined\1.15.2-20200515.085601\joined-1.15.2-20200515.085601-srg.jar
+  Output:    C:\Users\Jshaw\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatched.jar
   KeepData:  false
   Unpatched: false
-  Patches:   C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatches.lzma
-Loading patches file: C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatches.lzma
+  Patches:   C:\Users\Jshaw\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatches.lzma
+Loading patches file: C:\Users\Jshaw\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.15.2-31.2.0\forge-1.15.2-31.2.0-binpatches.lzma
   Reading patch com.mojang.blaze3d.platform.GlStateManager$1.binpatch
     Checksum: 6f605fcc Exists: true
   Reading patch com.mojang.blaze3d.platform.GlStateManager$AlphaState.binpatch
@@ -2232,7 +2232,7 @@ Loading patches file: C:\Users\CPU_76\.gradle\caches\forge_gradle\minecraft_user
     Checksum: 87450659 Exists: true
   Reading patch net.minecraft.world.storage.loot.functions.Smelt.binpatch
     Checksum: e638c82 Exists: true
-Processing: C:\Users\CPU_76\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\joined\1.15.2-20200515.085601\joined-1.15.2-20200515.085601-srg.jar
+Processing: C:\Users\Jshaw\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\joined\1.15.2-20200515.085601\joined-1.15.2-20200515.085601-srg.jar
   Patching net/minecraft/advancements/criterion/ItemPredicate$Builder 1/1
   Patching net/minecraft/world/dimension/EndDimension 1/1
   Patching net/minecraft/world/end/DragonFightManager 1/1
