@@ -4,6 +4,7 @@ import net.minecraft.client.MainWindow;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
@@ -35,6 +36,10 @@ public class MapHelper {
 
     private boolean used = false;
     private int ticks = 0;
+    private int spadeTicks = 0;
+    private boolean spadeUsed = false;
+
+    private String newString = "";
 
     public MapHelper() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -53,36 +58,44 @@ public class MapHelper {
         if(used) {
             ticks++;
         }
+        // Spade tick counter for 1 minute
+        if(spadeTicks > 1200 && spadeUsed) {
+            spadeTicks = 0;
+            ClientPlayerEntity player = Minecraft.getInstance().player;
+            if(player == null) return;
+            ItemStack c = runScan(player.inventory);
+            if(c == null) {
+                newString = "";
+                spadeUsed = false;
+                egg = "";
+                egg2 = "";
+                return;
+            }
+        }
+        if(spadeUsed) {
+            spadeTicks++;
+        }
         //
         Minecraft mc = Minecraft.getInstance();
         ClientPlayerEntity player = mc.player;
         if (player == null) return;
         ItemStack item = player.getHeldItemMainhand();
-        String newString = "";
+        String name = item.getDisplayName().getString();
+        if(name.contains("Spade") && !spadeUsed) {
+            item = runScan(player.inventory);
+            if(item == null) return;
+        }
         String display;
         String display2;
-        if(item.hasTag()) {
-            CompoundNBT itemNBT = item.getTag();
-            ITextComponent po;
-            try {
-                INBT g = itemNBT.get("display");
-                po = g.toFormattedComponent();
-            } catch(NullPointerException err) {
-                return;
-            }
-            List<ITextComponent> lst = po.getSiblings();
-            for(ITextComponent i : lst) {
-                String lg = i.toString();
-                if(lg.contains("Clue Scroll ID: \"")) {
-                    for(int j = 1; j <= 37; j++) {
-                        if(!lg.contains("\"" + j + "\"")) {
-                            continue;
-                        }
-                        newString = Integer.toString(j);
-                    }
-                }
-            }
+
+        if(newString.isEmpty()) {
+            String id = findID(item);
+            if(id == null) return;
+            newString = id;
         }
+
+        spadeUsed = true;
+
         switch(newString) {
             case "1":
                 display = "/compass set 455 63 -541";
@@ -243,30 +256,76 @@ public class MapHelper {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void gameRenderEvent(RenderGameOverlayEvent.Post e) {
-        String x;
-        try {
-            x = egg;
-        } catch(NullPointerException n) {
-            return;
-        }
+        if(egg == null) return;
         Minecraft mc = Minecraft.getInstance();
         MainWindow res = e.getWindow();
         FontRenderer renderer = mc.fontRenderer;
-        int width = res.getScaledWidth()-10-renderer.getStringWidth(x);
+        int width = res.getScaledWidth()-10-renderer.getStringWidth(egg);
         int width2 = res.getScaledWidth()-10-renderer.getStringWidth(egg2);
         int height = res.getScaledHeight()/2+50;
         int height2 = height+10;
-        renderer.drawString(x, width, height, 0xFFFFFFFF);
+        renderer.drawString(egg, width, height, 0xFFFFFFFF);
         renderer.drawString(egg2, width2, height2, 0xFFFFFFFF);
     }
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void useItemEvent(PlayerInteractEvent.RightClickItem e) {
+        String name = e.getItemStack().getDisplayName().getString();
+        if(!name.contains("Clue Scroll") &&
+                !name.contains("Spade")) {
+            return;
+        }
         if(used) return;
-        if(egg.isEmpty()) return;
+        if(spadeUsed) return;
+        if(egg == null || egg.isEmpty()) return;
+        if(name.contains("Spade")) {
+                ItemStack clue = runScan(e.getPlayer().inventory);
+                if (clue == null) {
+                    egg = "";
+                    egg2 = "";
+                    newString = "";
+                    return;
+                }
+                newString = findID(clue);
+                spadeUsed = true;
+            }
         used = true;
         ClientPlayerEntity player = (ClientPlayerEntity) e.getPlayer();
         player.sendChatMessage(egg);
+    }
+
+    private String findID(ItemStack item) {
+        CompoundNBT itemNBT = item.getTag();
+        ITextComponent po;
+        try {
+            INBT g = itemNBT.get("display");
+            po = g.toFormattedComponent();
+        } catch (NullPointerException err) {
+            return null;
+        }
+        List<ITextComponent> lst = po.getSiblings();
+        for (ITextComponent i : lst) {
+            String lg = i.toString();
+            if (lg.contains("Clue Scroll ID: \"")) {
+                for (int j = 1; j <= 37; j++) {
+                    if (!lg.contains("\"" + j + "\"")) {
+                        continue;
+                    }
+                    return Integer.toString(j);
+                }
+            }
+        }
+        return null;
+    }
+
+    private ItemStack runScan(PlayerInventory inv) {
+        for(ItemStack item : inv.mainInventory) {
+            if(item.getDisplayName().getString().contains("Clue Scroll")) {
+                newString = findID(item);
+                return item;
+            }
+        }
+        return null;
     }
 }
